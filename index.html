@@ -38,10 +38,9 @@
             height: 100vh;
             position: relative;
             background: #ffffff;
-            display: flex;
-            flex-direction: column;
         }
 
+        /* PERBAIKAN UTAMA: Halaman tidak aktif akan disembunyikan total (pointer-events: none) */
         .page {
             display: none;
             width: 100%;
@@ -50,31 +49,37 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 15px 25px;
+            padding: 30px 25px;
             position: absolute;
             top: 0;
             left: 0;
             background: #fff;
+            pointer-events: none;
+            opacity: 0;
         }
 
-        .page.active { display: flex; animation: fadeIn 0.6s ease forwards; }
+        /* Hanya halaman aktif yang bisa disentuh dan berinteraksi */
+        .page.active { 
+            display: flex; 
+            pointer-events: auto;
+            opacity: 1;
+            animation: fadeIn 0.4s ease forwards; 
+            z-index: 10;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
-        
         .pink-italic-playfair { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 2rem; color: var(--accent-pink); }
-        
         .lowercase-text { text-transform: lowercase; line-height: 1.5; font-size: 0.95rem; color: #444; }
         .message-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent-pink); margin-bottom: 10px; font-style: italic; }
 
         /* --- HALAMAN 1: KOTAK KADO --- */
-        .gift-container { cursor: pointer; transition: transform 0.3s ease; margin-bottom: 25px; position: relative; }
+        .gift-container { cursor: pointer; transition: transform 0.3s ease; margin-bottom: 25px; }
         .gift-container:hover { transform: scale(1.05); }
-        
         .gift-box {
             width: 160px;
             height: 160px;
@@ -87,57 +92,21 @@
             align-items: center;
             overflow: hidden;
         }
-
         .ribbon-v { position: absolute; width: 30px; height: 100%; background: var(--accent-pink); left: 50%; transform: translateX(-50%); }
         .ribbon-h { position: absolute; width: 100%; height: 30px; background: var(--accent-pink); top: 50%; transform: translateY(-50%); }
-        
-        .ribbon-bow {
-            position: absolute;
-            z-index: 5;
-            width: 50px;
-            height: 50px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .bow-center {
-            width: 26px;
-            height: 26px;
-            background: var(--accent-pink);
-            border-radius: 50%;
-            z-index: 10;
-        }
-        .bow-left, .bow-right {
-            position: absolute;
-            width: 50px;
-            height: 35px;
-            background: var(--accent-pink);
-            border-radius: 50%;
-            top: 5px;
-        }
+        .ribbon-bow { position: absolute; z-index: 5; width: 50px; height: 50px; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; }
+        .bow-center { width: 26px; height: 26px; background: var(--accent-pink); border-radius: 50%; z-index: 10; }
+        .bow-left, .bow-right { position: absolute; width: 50px; height: 35px; background: var(--accent-pink); border-radius: 50%; top: 5px; }
         .bow-left { left: -30px; transform: rotate(-15deg); }
         .bow-right { right: -30px; transform: rotate(15deg); }
-        
-        .bow-tail-l, .bow-tail-r {
-            position: absolute;
-            width: 12px;
-            height: 40px;
-            background: var(--accent-pink);
-            top: 25px;
-            border-radius: 3px;
-            z-index: 2;
-        }
+        .bow-tail-l, .bow-tail-r { position: absolute; width: 12px; height: 40px; background: var(--accent-pink); top: 25px; border-radius: 3px; z-index: 2; }
         .bow-tail-l { left: -8px; transform: rotate(30deg); }
         .bow-tail-r { right: -8px; transform: rotate(-30deg); }
-
         .tap-to-open { font-size: 0.75rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; margin-top: 15px; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
         /* --- HALAMAN 2: TEBAK TANGGAL --- */
-        .quiz-title { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 10px; }
+        .quiz-title { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 15px; }
 
         /* --- HALAMAN 3: SURPRISE & KONFETI --- */
         .confetti-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
@@ -154,22 +123,10 @@
         .cake-wrapper { position: relative; width: 200px; height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; margin-top: 15px; margin-bottom: 15px; }
         .cake-body { width: 160px; height: 80px; background: #ffe5d9; border-radius: 15px 15px 5px 5px; position: relative; box-shadow: 0 6px 0 #fad2e1; z-index: 1; }
         .cake-cream { width: 100%; height: 25px; background: #fad2e1; border-radius: 15px 15px 0 0; position: absolute; top: 0; }
-        
         .candles-group { display: flex; gap: 15px; position: absolute; bottom: 75px; left: 50%; transform: translateX(-50%); z-index: 5; }
         .candle-item { width: 8px; height: 35px; background: #ff99ac; border-radius: 5px; position: relative; cursor: pointer; }
         .candle-item::after { content: ''; position: absolute; width: 3px; height: 6px; background: #666; top: -6px; left: 2px; }
-        
-        .flame {
-            width: 14px;
-            height: 20px;
-            background: #ffb703;
-            border-radius: 50% 50% 20% 20%;
-            position: absolute;
-            top: -20px;
-            left: -3px;
-            box-shadow: 0 0 12px #ffb703;
-            animation: flicker 0.1s alternate infinite;
-        }
+        .flame { width: 14px; height: 20px; background: #ffb703; border-radius: 50% 50% 20% 20%; position: absolute; top: -20px; left: -3px; box-shadow: 0 0 12px #ffb703; animation: flicker 0.1s alternate infinite; }
         .flame.off { display: none; }
 
         /* --- HALAMAN 5: SURAT UCAPAN --- */
@@ -182,30 +139,30 @@
         /* --- HALAMAN 6: GALERI FOTO --- */
         .gallery-container {
             width: 100%;
-            max-height: 60vh;
+            height: 70vh;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            padding: 5px;
+            gap: 20px;
+            padding: 10px 5px;
         }
         .polaroid-frame {
             background: white;
-            padding: 10px 10px 15px 10px;
+            padding: 12px 12px 18px 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.06);
             border: 1px solid #eee;
-            border-radius: 15px;
+            border-radius: 18px;
             width: 100%;
         }
         .polaroid-frame img { 
             width: 100%; 
             height: auto; 
-            max-height: 240px;
+            max-height: 250px;
             object-fit: cover; 
-            border-radius: 10px;
+            border-radius: 12px;
             background: #f9f9f9; 
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .caption-dancing-small { 
             font-family: 'Dancing Script', cursive; 
@@ -214,17 +171,16 @@
             display: block;
         }
 
-        /* Navigasi Relatif Tetap Aman Tampak Tengah */
+        /* Posisi tombol dinaikkan sedikit ke tengah area kosong */
         .nav-btns { 
             width: 100%; 
             display: flex; 
             justify-content: center; 
-            gap: 40px; 
-            z-index: 999; 
-            margin-top: 15px;
+            gap: 50px; 
+            margin-top: 30px;
             margin-bottom: 10px;
         }
-        .btn { border: none; background: none; font-size: 0.95rem; font-family: 'Inter', sans-serif; cursor: pointer; color: var(--text-muted); transition: 0.3s; padding: 5px 15px; }
+        .btn { border: none; background: none; font-size: 1.05rem; font-family: 'Inter', sans-serif; cursor: pointer; color: var(--text-muted); transition: 0.3s; padding: 10px 20px; }
         .btn-next { color: var(--accent-red); font-weight: 600; }
         .btn:hover { opacity: 0.7; }
     </style>
@@ -301,7 +257,7 @@
             <div class="letter-container">
                 <div id="text1" class="scroll-box">
                     <p class="lowercase-text">
-                        halo zaskya! 🍰✨ selamat ulang tahun yang ke-16 yaaa. walaupun tanggal 13 juni kemarin udah kelewat, aku tetep mau bilang makasih banyak karena kamu udah lahir ke dunia dan jadi temen cewek yang baik banget. makasih ya udah bertahan sejauh ini melewati banyak hal hebat. semoga di umur yang baru ini, kamu selalu dikelilingi kebahagiaan yang tulus, kedamaian, sehat selalu, dan apa pun yang lagi kamu impikan bisa segera tercapai. happy birthday bestie! 💖
+                        halo zaskya! 🍰✨ selamat ulang tahun yang ke-16 yaaa. walaupun tanggal 13 juni kemarin udah kelewat, aku tetep mau billing makasih banyak karena kamu udah lahir ke dunia dan jadi temen cewek yang baik banget. makasih ya udah bertahan sejauh ini melewati banyak hal hebat. semoga di umur yang baru ini, kamu selalu dikelilingi kebahagiaan yang tulus, kedamaian, sehat selalu, dan apa pun yang lagi kamu impikan bisa segera tercapai. happy birthday bestie! 💖
                     </p>
                     <div class="author-sign">— alma</div>
                 </div>
