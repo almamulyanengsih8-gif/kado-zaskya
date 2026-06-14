@@ -50,7 +50,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px 30px;
+            padding: 15px 25px;
             position: absolute;
             top: 0;
             left: 0;
@@ -66,18 +66,18 @@
 
         h1, h2 { font-family: 'Playfair Display', serif; font-weight: 700; }
         
-        .pink-italic-playfair { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 2.2rem; color: var(--accent-pink); }
+        .pink-italic-playfair { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; font-size: 2rem; color: var(--accent-pink); }
         
-        .lowercase-text { text-transform: lowercase; line-height: 1.6; font-size: 0.95rem; color: #444; }
-        .message-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--accent-pink); margin-bottom: 15px; font-style: italic; }
+        .lowercase-text { text-transform: lowercase; line-height: 1.5; font-size: 0.95rem; color: #444; }
+        .message-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent-pink); margin-bottom: 10px; font-style: italic; }
 
         /* --- HALAMAN 1: KOTAK KADO --- */
-        .gift-container { cursor: pointer; transition: transform 0.3s ease; margin-bottom: 30px; position: relative; }
+        .gift-container { cursor: pointer; transition: transform 0.3s ease; margin-bottom: 25px; position: relative; }
         .gift-container:hover { transform: scale(1.05); }
         
         .gift-box {
-            width: 170px;
-            height: 170px;
+            width: 160px;
+            height: 160px;
             background: #fff0f3;
             border-radius: 25px;
             position: relative;
@@ -88,8 +88,8 @@
             overflow: hidden;
         }
 
-        .ribbon-v { position: absolute; width: 35px; height: 100%; background: var(--accent-pink); left: 50%; transform: translateX(-50%); }
-        .ribbon-h { position: absolute; width: 100%; height: 35px; background: var(--accent-pink); top: 50%; transform: translateY(-50%); }
+        .ribbon-v { position: absolute; width: 30px; height: 100%; background: var(--accent-pink); left: 50%; transform: translateX(-50%); }
+        .ribbon-h { position: absolute; width: 100%; height: 30px; background: var(--accent-pink); top: 50%; transform: translateY(-50%); }
         
         .ribbon-bow {
             position: absolute;
@@ -104,41 +104,40 @@
             align-items: center;
         }
         .bow-center {
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
             background: var(--accent-pink);
             border-radius: 50%;
             z-index: 10;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .bow-left, .bow-right {
             position: absolute;
-            width: 55px;
-            height: 40px;
+            width: 50px;
+            height: 35px;
             background: var(--accent-pink);
             border-radius: 50%;
             top: 5px;
         }
-        .bow-left { left: -35px; transform: rotate(-15deg); }
-        .bow-right { right: -35px; transform: rotate(15deg); }
+        .bow-left { left: -30px; transform: rotate(-15deg); }
+        .bow-right { right: -30px; transform: rotate(15deg); }
         
         .bow-tail-l, .bow-tail-r {
             position: absolute;
-            width: 15px;
-            height: 45px;
+            width: 12px;
+            height: 40px;
             background: var(--accent-pink);
             top: 25px;
             border-radius: 3px;
             z-index: 2;
         }
-        .bow-tail-l { left: -10px; transform: rotate(30deg); }
-        .bow-tail-r { right: -10px; transform: rotate(-30deg); }
+        .bow-tail-l { left: -8px; transform: rotate(30deg); }
+        .bow-tail-r { right: -8px; transform: rotate(-30deg); }
 
-        .tap-to-open { font-size: 0.75rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; margin-top: 20px; animation: blink 1.5s infinite; }
+        .tap-to-open { font-size: 0.75rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; margin-top: 15px; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
         /* --- HALAMAN 2: TEBAK TANGGAL --- */
-        .quiz-title { font-size: 1.6rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 10px; }
+        .quiz-title { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 10px; }
 
         /* --- HALAMAN 3: SURPRISE & KONFETI --- */
         .confetti-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
@@ -148,87 +147,84 @@
             100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
         }
         .hbd-label-thin { font-size: 0.85rem; letter-spacing: 5px; color: #777; font-weight: 300; }
-        .name-highlight { font-size: 3.5rem; color: var(--accent-red); margin: 10px 0; letter-spacing: 2px; font-weight: 700; }
-        .thin-subtitle { font-weight: 300; font-size: 1.1rem; color: #666; letter-spacing: 1px; }
+        .name-highlight { font-size: 3.2rem; color: var(--accent-red); margin: 8px 0; letter-spacing: 2px; font-weight: 700; }
+        .thin-subtitle { font-weight: 300; font-size: 1rem; color: #666; letter-spacing: 1px; }
 
         /* --- HALAMAN 4: KUE & LILIN --- */
-        .cake-wrapper { position: relative; width: 220px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; margin-top: 20px; margin-bottom: 20px; }
-        .cake-body { width: 170px; height: 90px; background: #ffe5d9; border-radius: 15px 15px 5px 5px; position: relative; box-shadow: 0 8px 0 #fad2e1; z-index: 1; }
-        .cake-cream { width: 100%; height: 30px; background: #fad2e1; border-radius: 15px 15px 0 0; position: absolute; top: 0; }
+        .cake-wrapper { position: relative; width: 200px; height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; margin-top: 15px; margin-bottom: 15px; }
+        .cake-body { width: 160px; height: 80px; background: #ffe5d9; border-radius: 15px 15px 5px 5px; position: relative; box-shadow: 0 6px 0 #fad2e1; z-index: 1; }
+        .cake-cream { width: 100%; height: 25px; background: #fad2e1; border-radius: 15px 15px 0 0; position: absolute; top: 0; }
         
-        .candles-group { display: flex; gap: 20px; position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%); z-index: 5; }
-        .candle-item { width: 10px; height: 40px; background: #ff99ac; border-radius: 5px; position: relative; cursor: pointer; }
-        .candle-item::after { content: ''; position: absolute; width: 4px; height: 8px; background: #666; top: -8px; left: 3px; }
+        .candles-group { display: flex; gap: 15px; position: absolute; bottom: 75px; left: 50%; transform: translateX(-50%); z-index: 5; }
+        .candle-item { width: 8px; height: 35px; background: #ff99ac; border-radius: 5px; position: relative; cursor: pointer; }
+        .candle-item::after { content: ''; position: absolute; width: 3px; height: 6px; background: #666; top: -6px; left: 2px; }
         
         .flame {
-            width: 16px;
-            height: 24px;
+            width: 14px;
+            height: 20px;
             background: #ffb703;
             border-radius: 50% 50% 20% 20%;
             position: absolute;
-            top: -25px;
+            top: -20px;
             left: -3px;
-            box-shadow: 0 0 15px #ffb703;
+            box-shadow: 0 0 12px #ffb703;
             animation: flicker 0.1s alternate infinite;
         }
         .flame.off { display: none; }
-        @keyframes flicker { from { transform: scale(1); opacity: 0.9; } to { transform: scale(1.1); opacity: 1; } }
 
         /* --- HALAMAN 5: SURAT UCAPAN --- */
         .letter-container { background: #fff; padding: 15px; border: 1px solid #f0f0f0; border-radius: 15px; position: relative; width: 100%; }
-        .scroll-box { max-height: 150px; overflow: hidden; transition: all 0.5s ease; text-align: left; }
+        .scroll-box { max-height: 140px; overflow: hidden; transition: all 0.5s ease; text-align: left; }
         .scroll-box.full { max-height: 800px; overflow-y: auto; }
-        .expand-icon { margin-top: 10px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.8rem; }
-        .author-sign { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; margin-top: 10px; color: var(--accent-pink); }
+        .expand-icon { margin-top: 8px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.8rem; }
+        .author-sign { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin-top: 8px; color: var(--accent-pink); }
 
-        /* --- HALAMAN 6: 3 FOTO GALERI MELENGKUNG --- */
+        /* --- HALAMAN 6: GALERI FOTO --- */
         .gallery-container {
             width: 100%;
-            max-height: 65vh;
+            max-height: 60vh;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             padding: 5px;
-            margin-bottom: 15px;
         }
         .polaroid-frame {
             background: white;
-            padding: 12px 12px 18px 12px;
+            padding: 10px 10px 15px 10px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.06);
             border: 1px solid #eee;
-            border-radius: 20px;
+            border-radius: 15px;
             width: 100%;
-            text-align: center;
         }
         .polaroid-frame img { 
             width: 100%; 
             height: auto; 
-            max-height: 260px;
+            max-height: 240px;
             object-fit: cover; 
-            border-radius: 12px;
+            border-radius: 10px;
             background: #f9f9f9; 
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .caption-dancing-small { 
             font-family: 'Dancing Script', cursive; 
-            font-size: 1.5rem; 
+            font-size: 1.4rem; 
             color: var(--text-dark); 
             display: block;
-            word-wrap: break-word;
         }
 
-        /* Navigasi Relatif - Sekarang nempel di bawah konten, tidak di dasar layar */
+        /* Navigasi Relatif Tetap Aman Tampak Tengah */
         .nav-btns { 
             width: 100%; 
             display: flex; 
             justify-content: center; 
             gap: 40px; 
             z-index: 999; 
-            margin-top: 25px;
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
-        .btn { border: none; background: none; font-size: 1rem; font-family: 'Inter', sans-serif; cursor: pointer; color: var(--text-muted); transition: 0.3s; padding: 5px 15px; }
+        .btn { border: none; background: none; font-size: 0.95rem; font-family: 'Inter', sans-serif; cursor: pointer; color: var(--text-muted); transition: 0.3s; padding: 5px 15px; }
         .btn-next { color: var(--accent-red); font-weight: 600; }
         .btn:hover { opacity: 0.7; }
     </style>
@@ -273,7 +269,7 @@
             <div class="hbd-label-thin">HAPPY BIRTHDAY!</div>
             <h1 class="name-highlight">ZASKYA</h1>
             <div class="thin-subtitle">ulang tahun ke-16</div>
-            <div class="pink-italic-playfair" style="margin-top: 15px; font-size: 2rem;">with love, alma</div>
+            <div class="pink-italic-playfair" style="margin-top: 10px; font-size: 1.8rem;">with love, alma</div>
             
             <div class="nav-btns">
                 <button class="btn" onclick="prevPage()">kembali</button>
@@ -321,7 +317,7 @@
         </div>
 
         <div id="page6" class="page">
-            <div class="message-title" style="margin-bottom: 10px;">our memories</div>
+            <div class="message-title" style="margin-bottom: 5px;">our memories</div>
             
             <div class="gallery-container">
                 <div class="polaroid-frame">
@@ -340,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="nav-btns" style="margin-top: 0; margin-bottom: 15px;">
+            <div class="nav-btns">
                 <button class="btn" onclick="prevPage()">kembali</button>
             </div>
         </div>
