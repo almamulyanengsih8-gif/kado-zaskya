@@ -184,19 +184,20 @@
         /* --- HALAMAN 6: 3 FOTO GALERI MELENGKUNG --- */
         .gallery-container {
             width: 100%;
-            max-height: 70vh;
+            max-height: 75vh;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 25px;
             padding: 10px 5px;
+            padding-bottom: 100px;
         }
         .polaroid-frame {
             background: white;
             padding: 15px 15px 20px 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.06);
             border: 1px solid #eee;
-            border-radius: 20px; /* Membuat sisa pinggiran bingkai melengkung sesuai request */
+            border-radius: 20px;
             width: 100%;
             text-align: center;
         }
@@ -205,7 +206,7 @@
             height: auto; 
             max-height: 300px;
             object-fit: cover; 
-            border-radius: 12px; /* Membuat sudut foto melengkung */
+            border-radius: 12px;
             background: #f9f9f9; 
             display: block;
             margin-bottom: 12px;
@@ -218,10 +219,20 @@
             word-wrap: break-word;
         }
 
-        /* Navigasi */
-        .nav-btns { position: absolute; bottom: 40px; width: 100%; display: flex; justify-content: center; gap: 30px; z-index: 10; }
-        .btn { border: none; background: none; font-size: 0.9rem; font-family: 'Inter', sans-serif; cursor: pointer; color: var(--text-muted); transition: 0.3s; }
-        .btn-next { color: var(--accent-red); font-weight: 500; }
+        /* Navigasi Global Terbawah */
+        .nav-btns { 
+            position: absolute; 
+            bottom: 30px; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            z-index: 999; 
+            left: 0;
+            right: 0;
+        }
+        .btn { border: none; background: none; font-size: 1rem; font-family: 'Inter', sans-serif; cursor: pointer; color: var(--text-muted); transition: 0.3s; padding: 10px; }
+        .btn-next { color: var(--accent-red); font-weight: 600; }
         .btn:hover { opacity: 0.7; }
     </style>
 </head>
@@ -251,8 +262,10 @@
         </div>
 
         <div id="page2" class="page">
-            <h1 class="quiz-title">ada apa ya di tanggal <span style="color: var(--accent-pink);">13 juni</span>? 🤔</h1>
-            <p class="lowercase-text" style="color: var(--text-muted); margin-bottom: 20px;">kayanya ada momen lama yang berharga banget...</p>
+            <div style="margin-bottom: 60px;">
+                <h1 class="quiz-title">ada apa ya di tanggal <span style="color: var(--accent-pink);">13 juni</span>? 🤔</h1>
+                <p class="lowercase-text" style="color: var(--text-muted);">kayanya ada momen lama yang berharga banget...</p>
+            </div>
             <div class="nav-btns">
                 <button class="btn" onclick="prevPage()">kembali</button>
                 <button class="btn btn-next" onclick="nextPage()">lanjut &rarr;</button>
@@ -291,7 +304,7 @@
 
         <div id="page5" class="page">
             <div class="message-title">special message for you</div>
-            <div class="letter-container">
+            <div class="letter-container" style="margin-bottom: 60px;">
                 <div id="text1" class="scroll-box">
                     <p class="lowercase-text">
                         halo zaskya! 🍰✨ selamat ulang tahun yang ke-16 yaaa. walaupun tanggal 13 juni kemarin udah kelewat, aku tetep mau bilang makasih banyak karena kamu udah lahir ke dunia dan jadi temen cewek yang baik banget. makasih ya udah bertahan sejauh ini melewati banyak hal hebat. semoga di umur yang baru ini, kamu selalu dikelilingi kebahagiaan yang tulus, kedamaian, sehat selalu, dan apa pun yang lagi kamu impikan bisa segera tercapai. happy birthday bestie! 💖
@@ -309,7 +322,7 @@
         </div>
 
         <div id="page6" class="page">
-            <div class="message-title" style="margin-bottom: 20px;">our memories</div>
+            <div class="message-title" style="margin-bottom: 10px;">our memories</div>
             
             <div class="gallery-container">
                 <div class="polaroid-frame">
@@ -328,7 +341,7 @@
                 </div>
             </div>
 
-            <div class="nav-btns" style="position: relative; margin-top: 25px; bottom: 0;">
+            <div class="nav-btns">
                 <button class="btn" onclick="prevPage()">kembali</button>
             </div>
         </div>
